@@ -24,9 +24,12 @@ interview playbook for that stretch, then returns).** The invariants below apply
   into vagueness). Answerable without reopening anything.
 - **Batch rounds (≤4 questions), don't drip.** Worst observed anti-pattern: ~20 sequential
   singles.
-- **multiSelect's job:** batched action authorization ("which of these N do I execute") and
-  pick-all-that-apply elicitation. Genuine either/or stays single-select (~80% of real
-  usage). Recommended option first, labeled.
+- **Default to multiSelect; let the operator narrow.** Set `multiSelect: true` on virtually
+  every question — it's a superset of single-select (the operator can still pick exactly one)
+  and never traps them in a forced N-way choice. Reserve true single-select only where picking
+  two is genuinely incoherent — and even then, prefer multiSelect with a note. Its core jobs
+  remain batched action authorization ("which of these N do I execute") and pick-all-that-apply
+  elicitation. Recommended option first, labeled.
 - **One option = one decision — never bundle.** An option that reads "X of {several things}"
   ("ship the 4 fold-ins", "clean up all N") is un-checkable: the operator can't approve it
   without approving a sub-bundle they can't see into, so they leave it blank. Keep each option
@@ -36,6 +39,11 @@ interview playbook for that stretch, then returns).** The invariants below apply
   to compress N distinct calls into one row.
 - **"Other" free-text is the real spec.** Operators steer hardest there, often overriding
   the option set entirely. Parse and follow that, not the nearest option.
+- **Always leave an exit, never force a pick.** Every question needs a no-commitment escape —
+  "neither", "none yet", "hold / tell me more", "not sure" — as an explicit option, not just
+  the buried "Other". On a phone or a Nintendo DS, typing free-text is expensive; a forced
+  N-way choice with no opt-out is a trap. The escape option doubles as the "I need more info
+  before I can answer" signal that triggers the rich-render hatch.
 - **Rich-render escape hatch.** Evidence too big for a question → dark self-contained HTML
   deep-dive via the file-share tool (`SendUserFile`), then re-ask the same question. Render carries
   evidence; question carries the decision.
