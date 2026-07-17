@@ -27,6 +27,13 @@ interview playbook for that stretch, then returns).** The invariants below apply
 - **multiSelect's job:** batched action authorization ("which of these N do I execute") and
   pick-all-that-apply elicitation. Genuine either/or stays single-select (~80% of real
   usage). Recommended option first, labeled.
+- **One option = one decision — never bundle.** An option that reads "X of {several things}"
+  ("ship the 4 fold-ins", "clean up all N") is un-checkable: the operator can't approve it
+  without approving a sub-bundle they can't see into, so they leave it blank. Keep each option
+  atomic and independently decidable. When the decisions are heterogeneous or consequential,
+  surface them **one at a time, highest-value first** (playbook 1's "one item fully, then one
+  question" applied to the *decisions*) — the ≤4-batch rule is for *peer* choices, not a licence
+  to compress N distinct calls into one row.
 - **"Other" free-text is the real spec.** Operators steer hardest there, often overriding
   the option set entirely. Parse and follow that, not the nearest option.
 - **Rich-render escape hatch.** Evidence too big for a question → dark self-contained HTML
