@@ -30,7 +30,7 @@ interview playbook for that stretch, then returns).** The invariants below apply
 - **"Other" free-text is the real spec.** Operators steer hardest there, often overriding
   the option set entirely. Parse and follow that, not the nearest option.
 - **Rich-render escape hatch.** Evidence too big for a question → dark self-contained HTML
-  deep-dive via the present-file tool, then re-ask the same question. Render carries
+  deep-dive via the file-share tool (`SendUserFile`), then re-ask the same question. Render carries
   evidence; question carries the decision.
 - **Outward/destructive draft gate.** New claims under the operator's name, and anything
   irreversible, get shown first. Batch-approved mechanical ops go direct.
